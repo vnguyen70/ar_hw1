@@ -1,58 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- Spherical panorama using threejs and webglrenderer-code by Colin Freeman, modified by Jay Bolter -->
-<head>
-	<title>Spherical panorama</title>
-	<style>
-		body { margin: 0; overflow: hidden; background-color: #000; }
-		.tm  { position: absolute; top: 10px; right: 10px; }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: 2px solid #4CAF50;
-            transition-duration: 0.4s;
-            border-radius: 8px;
+<!doctype html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-            display: inline-block;
-            text-align: center;
-            transition: all 0.5s;
-            cursor: pointer;
-            margin: 5px;
-        }
-        button:hover {
-            background-color: #3e8e41;
-            border: 2px solid #3e8e41;
-        }
+<title>Panorama</title>
 
+<script src="./assets/three.js"></script>
+<script src="./assets/threestrap.js"></script>
+<script src="./assets/argon.js"></script>
+<script src="./assets/argon-three.js"></script>
 
-    </style>	
-</head>
 <body>
-    <button id="button" class="toggle" style="
-        position: fixed;
-        left: 0;
-        right: 0;
-        margin: auto;
-        bottom: 70px;
-        height: 60px;
-        width: 100px;
-        z-index: 1;
-    ">Toggle Cube</button>
-
-    <div id="sphere" ondblclick="doubleTap()">
-	</div>
-
-	<!-- end of new code -->
-	<script src="./assets/jquery.js"></script>
-	<script src="./assets/three.js"></script>
-	<script src="./assets/OrbitControls.js"></script>	
-	<script src="./assets/Detector.js"></script>
-	<script src="./assets/CanvasRenderer.js"></script>
-	<script>
-  		var imageFile = "Panorama132";
-	</script>
-
-	<script src="./webapp.js"></script>
-		
+This code uses takes an equirectangular projection panoramic image to create an Argon3 panorama.
+The input image should have a 2-1 aspect ratio and should not be greater than 4000x2000 pixels.
+This image is texture mapped onto the surface of a sphere surround the user/camera.
+This code can be expanded to include other images and functionality for a fuller Argon3 experience.
+Go to the site: http://ael.gatech.edu/argon for more details.
 </body>
+<script>
+  var imageFile = "Panorama132";
+</script>
+<script src="./app.js"></script>
 </html>
